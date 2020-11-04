@@ -17,8 +17,8 @@ app.use(function(req, res, next) {
     next();
 });
 
-const productsRouter = require('./routes/products');
-app.use('/products', productsRouter);
+const router = require('./router');
+app.use('/', router);
 
 app.listen(3000, () => {
     console.log('server started')
