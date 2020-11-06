@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 
     try{
         await product.save();
-        res.status(201).json({ message: 'object saved to db' });
+        res.status(201).json(product);
     }catch(err){
         res.status(500).json({ message: err.message });
     }
@@ -48,7 +48,7 @@ router.put('/', async (req, res) => {
                 }
             }
         )
-        res.status(200).json({ message: 'product updated' });
+        res.status(200).json(req.body);
     }catch(err){
         res.status(500).json({ message: err.message });
     }
